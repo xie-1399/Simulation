@@ -2,7 +2,6 @@
 import os
 import stat
 
-
 def write_open(filename):
     fd = os.open(filename, os.O_WRONLY| os.O_APPEND|os.O_CREAT,0)
     print("fd number:", fd)

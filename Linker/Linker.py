@@ -24,6 +24,14 @@ def checkWerror():
     print("using -Werror check global var define")
 
 
+#静态链接,如何创建一个静态链接的库,但是需要注意的是静态库在链接时候的顺序，如果一个库使用了另外一个库那么这个库在命令行之中应该出现在它之前
+def staticLinked():
+    print("using example like: gcc main.c /usr/lib/libc.a")
+    #create .a lib , using -c to generator .o
+    print("ar rcs libvector.a addvec.o multvec.o")
+    #using the .a can like : gcc -static -o prog main2.o ./libvector.a
+
+
 
 if __name__ == '__main__':
     compile("./demo/main.c","./demo/sum.c")
